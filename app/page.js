@@ -7,20 +7,31 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+export const dynamic = 'force-dynamic';
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  try {
+    const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`, {
+      next: { revalidate: 60 }, // Cache for 60 seconds (optional)
+    });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    if (!res.ok) {
+      console.error('Failed to fetch blog data:', res.statusText);
+      return [];
+    }
+
+    const data = await res.json();
+
+    return data
+      .filter((item) => item?.cover_image)
+      .sort(() => Math.random() - 0.5);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
   }
+}
 
-  const data = await res.json();
 
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
-};
 
 export default async function Home() {
   const blogs = await getData();
