@@ -1,3 +1,6 @@
+// page.js
+'use client';  // Add this at the top of the file
+
 import { useEffect, useState } from 'react';
 import { personalData } from "@/utils/data/personal-data";
 import AboutSection from "./components/homepage/about";
