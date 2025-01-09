@@ -40,7 +40,7 @@ export default function Home() {
       <AboutSection />
       <Experience />
       <Skills />
-      {blogs && <Blog blogs={blogs} />}
+      // {blogs && <Blog blogs={blogs} />}
       <Education />
       <ContactSection />
     </>
