@@ -6,14 +6,15 @@ const GlowCard = ({ children, identifier }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || typeof document === "undefined") return; // Ensure it's client-side
+    if (typeof window === "undefined" || typeof document === "undefined") return; // Prevents SSR errors
 
     setIsClient(true);
 
     const CONTAINER = containerRef.current;
-    const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
+    if (!CONTAINER) return;
 
-    if (!CONTAINER || CARDS.length === 0) return;
+    const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
+    if (CARDS.length === 0) return;
 
     const CONFIG = {
       proximity: 40,

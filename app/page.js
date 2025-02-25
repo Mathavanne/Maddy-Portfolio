@@ -17,8 +17,14 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false); 
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return; // Prevents SSR execution
     setIsClient(true);
+
+    if (!personalData?.devUsername) {
+      setError("Developer username is missing.");
+      setLoading(false);
+      return;
+    }
 
     const fetchBlogs = async () => {
       try {
@@ -55,6 +61,24 @@ export default function Home() {
       <Projects />
       <Education />
       <ContactSection />
+
+      {/* Blog Section */}
+      <section>
+        {loading && <p>Loading blogs...</p>}
+        {error && <p>Error: {error}</p>}
+        {blogs && blogs.length > 0 ? (
+          blogs.map((blog) => (
+            <div key={blog.id}>
+              <h3>{blog.title}</h3>
+              <img src={blog.cover_image} alt={blog.title} />
+              <p>{blog.description}</p>
+              <a href={blog.url} target="_blank" rel="noopener noreferrer">Read more</a>
+            </div>
+          ))
+        ) : (
+          !loading && <p>No blogs found.</p>
+        )}
+      </section>
     </>
   );
 }
