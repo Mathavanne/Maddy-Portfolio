@@ -1,4 +1,4 @@
-"use client";  // Make sure this runs on the client side
+"use client"; 
 
 import { useEffect, useState } from "react";
 import { personalData } from "@/utils/data/personal-data";
@@ -9,16 +9,14 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
-// import Blog from "./components/homepage/blog"; // Uncomment if needed
 
 export default function Home() {
   const [blogs, setBlogs] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [isClient, setIsClient] = useState(false); // Ensure we are on the client side
+  const [isClient, setIsClient] = useState(false); 
 
   useEffect(() => {
-    // Ensure this runs only in the browser
     if (typeof window === "undefined") return;
     setIsClient(true);
 
@@ -46,7 +44,7 @@ export default function Home() {
     fetchBlogs();
   }, []);
 
-  if (!isClient) return <p>Loading...</p>; // Prevents SSR issues
+  if (!isClient) return <p>Loading...</p>; 
 
   return (
     <>
