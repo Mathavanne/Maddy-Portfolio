@@ -6,8 +6,7 @@ const GlowCard = ({ children, identifier }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Ensure this runs only on the client side
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return; // Ensure it's client-side
     setIsClient(true);
 
     const CONTAINER = containerRef.current;
@@ -75,7 +74,7 @@ const GlowCard = ({ children, identifier }) => {
     };
   }, [identifier]);
 
-  if (!isClient) return null; // Prevents SSR errors
+  if (!isClient) return null; // Prevents SSR issues
 
   return (
     <div ref={containerRef} className={`glow-container-${identifier} glow-container`}>
