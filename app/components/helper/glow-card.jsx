@@ -6,7 +6,8 @@ const GlowCard = ({ children, identifier }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // Ensure it's client-side
+    if (typeof window === "undefined" || typeof document === "undefined") return; // Ensure it's client-side
+
     setIsClient(true);
 
     const CONTAINER = containerRef.current;
