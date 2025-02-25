@@ -1,4 +1,4 @@
-"use client";  // Ensure this runs on the client-side only
+"use client";  // Make sure this runs on the client side
 
 import { useEffect, useState } from "react";
 import { personalData } from "@/utils/data/personal-data";
@@ -9,14 +9,19 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
-// import Blog from "./components/homepage/blog"; // Uncomment if you have a Blog component
+// import Blog from "./components/homepage/blog"; // Uncomment if needed
 
 export default function Home() {
   const [blogs, setBlogs] = useState(null);
-  const [error, setError] = useState(null); // Handle errors properly
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false); // Ensure we are on the client side
 
   useEffect(() => {
+    // Ensure this runs only in the browser
+    if (typeof window === "undefined") return;
+    setIsClient(true);
+
     const fetchBlogs = async () => {
       try {
         const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`);
@@ -34,12 +39,14 @@ export default function Home() {
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false); // Stop loading after fetch
+        setLoading(false);
       }
     };
 
     fetchBlogs();
   }, []);
+
+  if (!isClient) return <p>Loading...</p>; // Prevents SSR issues
 
   return (
     <>
@@ -48,12 +55,6 @@ export default function Home() {
       <Experience />
       <Skills />
       <Projects />
-      
-      {/* Blog Section */}
-      {loading && <p>Loading blogs...</p>}
-      {error && <p>Error fetching blogs: {error}</p>}
-      {/* {blogs && <Blog blogs={blogs} />} */}
-
       <Education />
       <ContactSection />
     </>
