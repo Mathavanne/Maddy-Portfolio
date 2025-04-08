@@ -11,7 +11,7 @@ import ScrollToTop from "./components/helper/scroll-to-top";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Mathavanne - Software Developer"};
+  title: "Portfolio of Mathavanne - Software Engineer"};
 
 export default function RootLayout({ children }) {
   return (
