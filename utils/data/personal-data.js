@@ -1,5 +1,5 @@
 export const personalData = {
-  name: "Maddy .M",
+  name: "Maddy",
   profile: '/profile.jpg',
   designation: "Software Engineer",
   description:"As a full-stack developer, I've had the privilege of working on both the front-end and back-end of projects. I'm fueled by a deep passion for problem-solving and thrive in collaborative environments where I can transform ideas into reality. Currently, I'm working as a Software Developer at Start-Up called Vilora Technologies. My tenure at my company has been marked by my proactive approach, taking ownership of tasks, and driving impactful changes. I am a full-stack developer & specialize in C# and .Net. And I am Done Games using GDevelop. I love connecting with passionate individuals in tech! Let's connect",
