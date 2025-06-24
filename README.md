@@ -14,7 +14,7 @@
 https://github.com/Mathavanne76200/Pictures/blob/main/Pictures/Screenshot%20from%202024-08-02%2019-21-25.png
 https://github.com/Mathavanne76200/Pictures/blob/main/Pictures/Screenshot%20from%202024-08-02%2019-21-31.png -->
 <!-- ---
-# [Built Portfolio With GitHub ](https://github.com/said7388/github-portfolio)
+# [Built Portfolio With GitHub ](https://github.com/Mathavanne/github-portfolio)
 
 ---
 
@@ -28,7 +28,7 @@ https://github.com/Mathavanne76200/Pictures/blob/main/Pictures/Screenshot%20from
 
 ![](./public/image/screen.png)
 
-## View live preview [here](https://abusaid.netlify.app/).
+## View live preview (https://maddy-portfolio-gules.vercel.app/).
 
 ---
 
@@ -79,9 +79,9 @@ git --version
 To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
 
 ```
-git clone https://github.com/<YOUR GITHUB USERNAME>/developer-portfolio.git
+git clone https://github.com/<YOUR GITHUB USERNAME>/Maddy-portfolio.git
 
-cd developer-portfolio
+cd maddy-portfolio
 ```
 
 ### Install packages from the root directory
@@ -120,26 +120,26 @@ NEXT_PUBLIC_RECAPTCHA_SECRET_KEY = # For captcha verification on contact form
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY =
 ```
 
-### Then, Customize data in the `utils/data` [folder](https://github.com/said7388/developer-portfolio/tree/main/utils/data).
+### Then, Customize data in the `utils/data` [folder](https://github.com/maddy/developer-portfolio/tree/main/utils/data).
 
 Eg:
 
 ```javascript
 export const personalData = {
-  name: "ABU SAID",
+  name: "Maddy",
   profile: "/profile.png",
   designation: "Full-Stack Software Developer",
-  description: "My name is ABU SAID....",
-  email: "abusaid7388@gmail.com",
-  phone: "+8801608797655",
-  address: "Dhaka, Bangladesh",
-  github: "https://github.com/said7388",
-  facebook: "https://www.facebook.com/abusaid.riyaz/",
-  linkedIn: "https://www.linkedin.com/in/abu-said-bd/",
-  twitter: "https://twitter.com/said7388",
-  stackOverflow: "https://stackoverflow.com/users/16840768/abu-said",
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
+  description: "My name is Maddy....",
+  email: "madymurugan.2u@gmail.com",
+  phone: "+91 99999XXXXX",
+  address: "Pondicherry,India",
+  github: "https://github.com/Mathavanne",
+  facebook: "https://www.facebook.com/mady216/",
+  linkedIn: "https://www.linkedin.com/in/mady04/",
+  twitter: "https://twitter.com/mady2164",
+  stackOverflow: "https://stackoverflow.com/users/16840768/maddy",
+  leetcode: "https://leetcode.com/maddy/",
+  devUsername: "mady04",
   resume: "...",
 };
 ```
