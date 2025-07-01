@@ -11,7 +11,7 @@ export const skillsData = [
   'MaterialUI',
   'PHP',
   'React',
-  'Canva'
+  'Canva',
   'Illustrator',
   'Photoshop',
   'Docker',
