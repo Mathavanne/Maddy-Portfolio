@@ -7,10 +7,10 @@ export const personalData = {
   phone: '+91 9994173677',
   address: 'Pondicherry',
   github: 'https://github.com/Mathavanne',
-  // facebook: '',
+  facebook: '',
   linkedIn: 'https://www.linkedin.com/in/mady04/',
   twitter: 'https://twitter.com/mr_maddy04',
-  // stackOverflow: '',
+  stackOverflow: '',
   leetcode: "https://leetcode.com/Maddy0903/",
   devUsername: "Mathavanne_k",
   resume: "https://drive.google.com/file/d/1BQvQuC8_yUxEC0fohk2NebZFUskIVLht/view?usp=sharing"

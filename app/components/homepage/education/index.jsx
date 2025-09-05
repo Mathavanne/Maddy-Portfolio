@@ -1,11 +1,10 @@
 // @flow strict
-import Image from "next/image";
-
 import { educations } from "@/utils/data/educations";
+import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
+import lottieFile from '../../../assets/lottie/study.json';
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
-import lottieFile from '/public/lottie/study.json';
 
 function Education() {
   return (
@@ -25,11 +24,11 @@ function Education() {
 
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#e15555]"></span>
-          <span className="bg-[#1a1443] border border-[#e15555] w-fit text-white p-2 px-5 text-xl rounded-md">
+          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
             Educations
           </span>
-          <span className="w-24 h-[2px] bg-[#e15555]"></span>
+          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
 
